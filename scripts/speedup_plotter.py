@@ -14,7 +14,7 @@
 #----------------------------------------------------------------------------------------
 
 """
-This python script takes care of producing the benchmark results plotting.
+This python script takes care of producing the benchmark speedup results plotting.
 
 Developed by Marco Raveri (mraveri@uchicago.edu) for the EFTCAMB code.
 """
@@ -53,7 +53,7 @@ plt.rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
 plt.rc('text', usetex=True)
 
 # spacing:
-left    = 0.02
+left    = 0.04
 right   = 1-left
 wspace  = 0.03
 bottom  = 0.25
@@ -72,12 +72,22 @@ colormap = { 0: (203.0/255.0, 15.0/255.0, 40.0/255.0),
 # ***************************************************************************************
 
 # plot the single benchmarks:
-for res in sorted_benchmark_results_keys:
-    # process:
-    labels = sorted(benchmark_results[res].models_rel_b.keys())
-    x     = np.arange( len(benchmark_results[res].models_rel_b) )
-    y     = np.array([ temp[0] for temp in [ benchmark_results[res].models_rel_b[key] for key in labels ] ])
-    y_err = np.array([ temp[1] for temp in [ benchmark_results[res].models_rel_b[key] for key in labels ] ])
+for ind, res in enumerate(sorted_benchmark_results_keys):
+    # do not acess the first element:
+    if ind==0: continue
+    # process and get the data:
+    res_1    = sorted_benchmark_results_keys[ind-1]
+    labels_1 = sorted(benchmark_results[res_1].models_rel_b.keys())
+    labels_2 = sorted(benchmark_results[res].models_rel_b.keys())
+    labels   = [ label for label in labels_1 if label in labels_2 ]
+    x        = np.arange( len(labels) )
+    y_1      = np.array([ temp[0] for temp in [ benchmark_results[res_1].models_bench[key] for key in labels ] ])
+    y_2      = np.array([ temp[0] for temp in [ benchmark_results[res].models_bench[key] for key in labels ] ])
+    y_err_1  = np.array([ temp[1] for temp in [ benchmark_results[res_1].models_bench[key] for key in labels ] ])
+    y_err_2  = np.array([ temp[1] for temp in [ benchmark_results[res].models_bench[key] for key in labels ] ])
+    y     = y_1/y_2
+    y_err = y*np.sqrt( (y_err_1/y_1)**2 +(y_err_2/y_2)**2  )
+
     num   = len(x)
     eff_x_size = float(num)/10.0*x_size
     # plot:
@@ -86,7 +96,7 @@ for res in sorted_benchmark_results_keys:
     ax = plt.subplot(gs[0, 0])
     fig.set_size_inches( eff_x_size/2.54, y_size/2.54 )
     # plot the data:
-    rect_1 = ax.bar( x+0.1, y     , width, yerr=y_err, ecolor='k', color=colormap[3], linewidth=0.8 )
+    rect_1 = ax.bar( x+0.1, y-1.0 , width, bottom=1.0, yerr=y_err, ecolor='k', color=colormap[0], linewidth=0.8 )
     # plot the upper shaded error bar:
     rect_2 = ax.bar( x+0.1, +y_err, width, bottom=y  , color='k' , alpha=alpha      , linewidth=0   )
     # plot the lower shaded error bar:
@@ -109,7 +119,7 @@ for res in sorted_benchmark_results_keys:
     ax.get_yticklabels()[ len(ax.get_yticklabels())/2-1 ].set_verticalalignment('top')
     ax.get_yticklabels()[-1].set_verticalalignment('top')
     # y-axis label:
-    ax.set_ylabel('EFTCAMB time / CAMB time', fontsize=main_fontsize)
+    ax.set_ylabel('time old / time new', fontsize=main_fontsize)
     ax.yaxis.set_label_position("left")
     # get the size of the labels:
     fig.canvas.draw()
@@ -131,11 +141,12 @@ for res in sorted_benchmark_results_keys:
     # appearence:
     gs.update( bottom= bottom_size/figure_y_size, top=top, left=left, right=right, wspace=wspace)
     # plot title:
-    title = 'EFTCAMB Benchmark results at '+benchmark_results[res].hour+':'+benchmark_results[res].minute+' of '+benchmark_results[res].day+'/'+benchmark_results[res].month+'/'+benchmark_results[res].year
+    title = 'EFTCAMB speedup of version of '+benchmark_results[res].hour+':'+benchmark_results[res].minute+' of '+benchmark_results[res].day+'/'+benchmark_results[res].month+'/'+benchmark_results[res].year\
+        +' w.r.t version of '+benchmark_results[res_1].hour+':'+benchmark_results[res_1].minute+' of '+benchmark_results[res_1].day+'/'+benchmark_results[res_1].month+'/'+benchmark_results[res_1].year
     ax.set_title( title, fontsize=main_fontsize, loc='center')
     # save and close figure:
-    plt.savefig(out_dir+'/'+str(res)+'.pdf')
-    plt.savefig(out_dir+'/'+str(res)+'.png')
+    plt.savefig(out_dir+'/'+str(res)+'_speedup.pdf')
+    plt.savefig(out_dir+'/'+str(res)+'_speedup.png')
     plt.clf()
 
 exit(0)
