@@ -134,8 +134,8 @@ for res in sorted_benchmark_results_keys:
     title = 'EFTCAMB Benchmark results at '+benchmark_results[res].hour+':'+benchmark_results[res].minute+' of '+benchmark_results[res].day+'/'+benchmark_results[res].month+'/'+benchmark_results[res].year
     ax.set_title( title, fontsize=main_fontsize, loc='center')
     # save and close figure:
-    plt.savefig(out_dir+'/'+str(res)+'.pdf')
-    plt.savefig(out_dir+'/'+str(res)+'.png')
+    plt.savefig(out_dir+'/pdf/'+str(res)+'.pdf')
+    plt.savefig(out_dir+'/png/'+str(res)+'.png')
     plt.clf()
 
 exit(0)

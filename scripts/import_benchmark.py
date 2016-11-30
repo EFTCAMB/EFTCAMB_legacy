@@ -85,8 +85,8 @@ class EFTCAMB_benchmark:
 
     def compute_relative_bench( self ):
         # get the value and error in GR:
-        value_GR = self.models_bench[ 'base_params' ][0]
-        err_GR   = self.models_bench[ 'base_params' ][1]
+        value_GR = self.models_bench[ '1_GR' ][0]
+        err_GR   = self.models_bench[ '1_GR' ][1]
         # loop over models:
         for model in self.models_bench:
             # get value and error of the model:
