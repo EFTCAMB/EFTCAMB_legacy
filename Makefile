@@ -29,6 +29,7 @@ clean: clean_plotting
 plotting:
 	@python scripts/benchmark_plotter.py
 	@python scripts/speedup_plotter.py
+	@python scripts/speed_plotter.py
 
 clean_plotting:
 	@rm -rf benchmark_plots/pdf/*.pdf

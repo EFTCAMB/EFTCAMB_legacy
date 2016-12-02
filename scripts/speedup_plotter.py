@@ -85,8 +85,8 @@ for ind, res in enumerate(sorted_benchmark_results_keys):
     y_2      = np.array([ temp[0] for temp in [ benchmark_results[res].models_rel_b[key] for key in labels ] ])
     y_err_1  = np.array([ temp[1] for temp in [ benchmark_results[res_1].models_rel_b[key] for key in labels ] ])
     y_err_2  = np.array([ temp[1] for temp in [ benchmark_results[res].models_rel_b[key] for key in labels ] ])
-    y     = (y_1/y_2-1.0)*100.0
-    y_err = 100.0*np.abs(y_1/y_2)*np.sqrt( (y_err_1/y_1)**2 +(y_err_2/y_2)**2  )
+    y     = y_1/y_2
+    y_err = np.abs(y)*np.sqrt( (y_err_1/y_1)**2 +(y_err_2/y_2)**2  )
 
     num   = len(x)
     eff_x_size = float(num)/10.0*x_size
@@ -96,7 +96,7 @@ for ind, res in enumerate(sorted_benchmark_results_keys):
     ax = plt.subplot(gs[0, 0])
     fig.set_size_inches( eff_x_size/2.54, y_size/2.54 )
     # plot the data:
-    rect_1 = ax.bar( x+0.1, y , width, yerr=y_err, ecolor='k', color=colormap[0], linewidth=0.8 )
+    rect_1 = ax.bar( x+0.1, y-1.0 , width, bottom=1.0, yerr=y_err, ecolor='k', color=colormap[0], linewidth=0.8 )
     # plot the upper shaded error bar:
     rect_2 = ax.bar( x+0.1, +y_err, width, bottom=y  , color='k' , alpha=alpha      , linewidth=0   )
     # plot the lower shaded error bar:
@@ -119,7 +119,7 @@ for ind, res in enumerate(sorted_benchmark_results_keys):
     ax.get_yticklabels()[ len(ax.get_yticklabels())/2-1 ].set_verticalalignment('top')
     ax.get_yticklabels()[-1].set_verticalalignment('top')
     # y-axis label:
-    ax.set_ylabel('speedup $\,(\\%)$', fontsize=main_fontsize)
+    ax.set_ylabel('time old / time new', fontsize=main_fontsize)
     ax.yaxis.set_label_position("left")
     # get the size of the labels:
     fig.canvas.draw()
@@ -162,8 +162,8 @@ y_1      = np.array([ temp[0] for temp in [ benchmark_results[res_1].models_rel_
 y_2      = np.array([ temp[0] for temp in [ benchmark_results[res].models_rel_b[key] for key in labels ] ])
 y_err_1  = np.array([ temp[1] for temp in [ benchmark_results[res_1].models_rel_b[key] for key in labels ] ])
 y_err_2  = np.array([ temp[1] for temp in [ benchmark_results[res].models_rel_b[key] for key in labels ] ])
-y        = (y_1/y_2-1.0)*100.0
-y_err    = 100.0*np.abs(y_1/y_2)*np.sqrt( (y_err_1/y_1)**2 +(y_err_2/y_2)**2  )
+y        = (y_1/y_2)
+y_err    = np.abs(y)*np.sqrt( (y_err_1/y_1)**2 +(y_err_2/y_2)**2  )
 
 num   = len(x)
 eff_x_size = float(num)/10.0*x_size
@@ -173,7 +173,7 @@ gs = gridspec.GridSpec(1, 1)
 ax = plt.subplot(gs[0, 0])
 fig.set_size_inches( eff_x_size/2.54, y_size/2.54 )
 # plot the data:
-rect_1 = ax.bar( x+0.1, y , width, yerr=y_err, ecolor='k', color=colormap[0], linewidth=0.8 )
+rect_1 = ax.bar( x+0.1, y-1.0 , width, bottom=1.0, yerr=y_err, ecolor='k', color=colormap[0], linewidth=0.8 )
 # plot the upper shaded error bar:
 rect_2 = ax.bar( x+0.1, +y_err, width, bottom=y  , color='k' , alpha=alpha      , linewidth=0   )
 # plot the lower shaded error bar:
@@ -196,7 +196,7 @@ ax.get_yticklabels()[ len(ax.get_yticklabels())/2 ].set_verticalalignment('botto
 ax.get_yticklabels()[ len(ax.get_yticklabels())/2-1 ].set_verticalalignment('top')
 ax.get_yticklabels()[-1].set_verticalalignment('top')
 # y-axis label:
-ax.set_ylabel('speedup $\,(\\%)$', fontsize=main_fontsize)
+ax.set_ylabel('time old / time new', fontsize=main_fontsize)
 ax.yaxis.set_label_position("left")
 # get the size of the labels:
 fig.canvas.draw()
