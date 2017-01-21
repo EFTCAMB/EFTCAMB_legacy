@@ -8,7 +8,7 @@ results of the previous ones.
 
 The repository contains the following folders:
 
-* ``Benchmark_Results:`` history of benchmark results. Used to track the preformances of the code.
-* ``Profile:`` latest profiler informations.
-* ``Spectra_Plots:`` plots of the latest spectra.
-* ``Spectra_Results:`` legacy spectra that are used by the EFTCAMB test suite.
+* ``benchmark_results:`` history of benchmark results. Used to track the preformances of the code.
+* ``profile:`` latest profiler informations.
+* ``spectra_plots:`` plots of the latest spectra.
+* ``spectra_results:`` legacy spectra that are used by the EFTCAMB test suite.

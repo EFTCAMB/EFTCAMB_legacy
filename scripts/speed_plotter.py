@@ -2,7 +2,7 @@
 #
 # This file is part of EFTCAMB.
 #
-# Copyright (C) 2013-2016 by the EFTCAMB authors
+# Copyright (C) 2013-2017 by the EFTCAMB authors
 #
 # The EFTCAMB code is free software;
 # You can use it, redistribute it, and/or modify it under the terms
@@ -89,8 +89,8 @@ x = range(num)
 y     = []
 y_err = []
 for res in sorted_benchmark_results_keys:
-    y.append(benchmark_results[res].models_rel_b['1_GR'][0])
-    y_err.append(benchmark_results[res].models_rel_b['1_GR'][1])
+    y.append(benchmark_results[res].models_rel_b['1_EFT_GR'][0])
+    y_err.append(benchmark_results[res].models_rel_b['1_EFT_GR'][1])
 
 y = np.array(y)
 y_err = np.array(y_err)
@@ -101,7 +101,7 @@ ax.plot( x, y-y_err, color='k', linewidth=0.3 )
 ax.fill_between( x, y-y_err, y+y_err, alpha=0.5, facecolor='k', linewidth=0.0)
 
 # get the number of data lines:
-done_keys    = ['1_GR','base_params']
+done_keys    = ['1_EFT_GR','base_params']
 for res in sorted_benchmark_results_keys:
     keys      = sorted( benchmark_results[res].models_rel_b.keys() )
     plot_keys = [ k for k in keys if k not in done_keys ]
@@ -109,7 +109,7 @@ for res in sorted_benchmark_results_keys:
 number_lines = len(done_keys)
 
 # plot the lines:
-done_keys    = ['1_GR','base_params']
+done_keys    = ['1_EFT_GR','base_params']
 col_ind      = 0
 for res in sorted_benchmark_results_keys:
     keys      = sorted( benchmark_results[res].models_rel_b.keys() )

@@ -2,7 +2,7 @@
 #
 # This file is part of EFTCAMB.
 #
-# Copyright (C) 2013-2016 by the EFTCAMB authors
+# Copyright (C) 2013-2017 by the EFTCAMB authors
 #
 # The EFTCAMB code is free software;
 # You can use it, redistribute it, and/or modify it under the terms
@@ -47,7 +47,7 @@ n_sigma       = 3.0       # number of sigma in time measurements to distinguish 
 
 # define the paths:
 script_dir = os.path.dirname(os.path.abspath(__file__))
-data_dir   = script_dir+'/../Benchmark_Results'
+data_dir   = script_dir+'/../benchmark_results'
 out_dir    = script_dir+'/../benchmark_plots'
 
 # some objects to hold the benchmark results:
@@ -85,8 +85,8 @@ class EFTCAMB_benchmark:
 
     def compute_relative_bench( self ):
         # get the value and error in GR:
-        value_GR = self.models_bench[ '1_GR' ][0]
-        err_GR   = self.models_bench[ '1_GR' ][1]
+        value_GR = self.models_bench[ '1_EFT_GR' ][0]
+        err_GR   = self.models_bench[ '1_EFT_GR' ][1]
         # loop over models:
         for model in self.models_bench:
             # get value and error of the model:
@@ -128,7 +128,7 @@ for file_name in benchmark_logs_files:
             continue
         # check for time drifting:
         GR1 = results.models_bench['base_params']
-        GR2 = results.models_bench['1_GR']
+        GR2 = results.models_bench['1_EFT_GR']
         drift_significance = abs(GR1[0]-GR2[0])/math.sqrt( GR1[1]**2 + GR2[1]**2 )
         if ( drift_significance>n_sigma ):
             print 'Rejecting file: ', file_name
