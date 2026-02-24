@@ -1,0 +1,221 @@
+***************************************************************
+     ______________________   __  ______  
+    / __/ __/_  __/ ___/ _ | /  |/  / _ ) 
+   / _// _/  / / / /__/ __ |/ /|_/ / _  | 
+  /___/_/   /_/  \___/_/ |_/_/  /_/____/   V3.1 Jan26
+  
+***************************************************************
+
+ EFTCAMB settings:
+  EFTCAMB_feedback_level      =           3
+  EFTCAMB_back_turn_on        =   1.0000000000000000E-008
+  EFTCAMB_pert_turn_on        =   1.0000000000000000E-008
+  EFTCAMB_GR_threshold        =   1.0000000000000000E-008
+  EFTCAMB_stability_time      =   1.0000000000000000E-010
+  EFTCAMB_stability_threshold =   0.0000000000000000     
+  EFTCAMB_effective_w0wa      = F
+
+ EFTCAMB stability flags:
+  Math ghost stability   =  F
+  Math mass stability    =  F
+  Ghost stability        =  T
+  Gradient stability     =  T
+  Mass stability         =  F
+  Mass stability rate    =  0.10000E+02
+  Additional priors      =  T
+  Positivity bounds      =  F
+  Minkowski limit      =  F
+
+ EFTCAMB model flags:
+   EFTflag             =  5
+
+   Model               =  Parameterized Horndeski (leading order in X)
+   Number of params    =  6
+
+      phi_ini          =   -0.316200
+   phidot_ini          =    0.000000
+
+Max DE energy fraction =      0.000000
+Max DE energy fraction z =    0.000000
+ Exponential function: Horndeskic0
+   Horndeskic00        =    0.000000
+   Horndeskic01        =    1.878740
+ Power Law function: Horndeskic3
+   Horndeskic30        =   -0.500000
+   Horndeskic3Exp      =    2.000000
+
+
+***************************************************************
+ EFTCAMB Horndeski background solver
+
+***************************************************************
+EFTCAMB parameters cache content:
+***************************************************************
+ Omega_CDM  :  0.258596E+00
+ Omega_b    :  0.448752E-01
+ Omega_v    :  0.695174E+00
+ Omega_k    :  0.000000E+00
+ Omega_n    :  0.128272E-02
+ Omega_g    :  0.492414E-04
+ Omega_r    :  0.227091E-04
+ h          :    70.867113
+ h_Mpc      :  0.236387E-03
+ grhog      :  0.825467E-11
+ grnonomass :  0.380688E-11
+ grhoc      :  0.433502E-07
+ grhob      :  0.752274E-08
+ grhov      :  0.116537E-06
+ grhok      :  0.000000E+00
+ Num_Nu_Massive      :         1
+ Nu_mass_eigenstates :         1
+ grhormass(  1)      :  0.190344E-11
+ nu_masses(  1)      :  0.355992E+03
+***************************************************************
+   initial condition phidot_ini  =    0.0000E+00
+***************************************************************
+EFTCAMB parameters cache content:
+***************************************************************
+ Omega_CDM  :  0.258596E+00
+ Omega_b    :  0.448752E-01
+ Omega_v    :  0.695174E+00
+ Omega_k    :  0.000000E+00
+ Omega_n    :  0.128272E-02
+ Omega_g    :  0.492414E-04
+ Omega_r    :  0.227091E-04
+ h          :    73.077164
+ h_Mpc      :  0.243759E-03
+ grhog      :  0.825467E-11
+ grnonomass :  0.380688E-11
+ grhoc      :  0.433502E-07
+ grhob      :  0.752274E-08
+ grhov      :  0.116537E-06
+ grhok      :  0.000000E+00
+ Num_Nu_Massive      :         1
+ Nu_mass_eigenstates :         1
+ grhormass(  1)      :  0.190344E-11
+ nu_masses(  1)      :  0.355992E+03
+***************************************************************
+ phidot changing sign detected at z=   589.94381620777051      tau=   425.90227203716472     
+ phidot changing sign detected at z=   71.198965611918140      tau=   1569.3064165141861     
+***************************************************************
+Reion redshift       =   7.738
+Integrated opt depth =  0.0533
+H0                   = 70.867113
+Om_b h^2             =  0.022537
+Om_c h^2             =  0.129871
+Om_nu h^2            =  0.000644
+Om_darkenergy        =  0.695174
+Om_K                 =  0.000000
+Om_m (inc Om_u)      =  0.304754
+100 theta (CosmoMC)  =  1.073882
+N_eff (total)        =  3.046000
+ 1 nu, g= 1.0153 m_nu*c^2/k_B/T_nu0=    355.99 (m_nu=  0.060 eV)
+Reion opt depth      =  0.0533
+Age of universe/GYr  =  12.830
+zstar                =  1090.37
+r_s(zstar)/Mpc       =  141.50
+100*theta            =  1.074186
+DA(zstar)/Gpc        =  13.17240
+zdrag                =  1060.86
+r_s(zdrag)/Mpc       =  144.04
+k_D(zstar) Mpc       =  0.1441
+100*theta_D          =  0.165460
+z_EQ (if v_nu=1)     =  3641.89
+k_EQ Mpc (if v_nu=1) =  0.011041
+100*theta_EQ         =  0.792916
+100*theta_rs_EQ      =  0.439031
+tau_recomb/Mpc       =  275.09  tau_now/Mpc =  13447.3
+***************************************************************
+ EFTCAMB Horndeski background solver
+
+***************************************************************
+EFTCAMB parameters cache content:
+***************************************************************
+ Omega_CDM  :  0.258596E+00
+ Omega_b    :  0.448752E-01
+ Omega_v    :  0.695174E+00
+ Omega_k    :  0.000000E+00
+ Omega_n    :  0.128272E-02
+ Omega_g    :  0.492414E-04
+ Omega_r    :  0.227091E-04
+ h          :    70.867113
+ h_Mpc      :  0.236387E-03
+ grhog      :  0.825467E-11
+ grnonomass :  0.380688E-11
+ grhoc      :  0.433502E-07
+ grhob      :  0.752274E-08
+ grhov      :  0.116537E-06
+ grhok      :  0.000000E+00
+ Num_Nu_Massive      :         1
+ Nu_mass_eigenstates :         1
+ grhormass(  1)      :  0.190344E-11
+ nu_masses(  1)      :  0.355992E+03
+***************************************************************
+   initial condition phidot_ini  =    0.0000E+00
+***************************************************************
+EFTCAMB parameters cache content:
+***************************************************************
+ Omega_CDM  :  0.258596E+00
+ Omega_b    :  0.448752E-01
+ Omega_v    :  0.695174E+00
+ Omega_k    :  0.000000E+00
+ Omega_n    :  0.128272E-02
+ Omega_g    :  0.492414E-04
+ Omega_r    :  0.227091E-04
+ h          :    73.077164
+ h_Mpc      :  0.243759E-03
+ grhog      :  0.825467E-11
+ grnonomass :  0.380688E-11
+ grhoc      :  0.433502E-07
+ grhob      :  0.752274E-08
+ grhov      :  0.116537E-06
+ grhok      :  0.000000E+00
+ Num_Nu_Massive      :         1
+ Nu_mass_eigenstates :         1
+ grhormass(  1)      :  0.190344E-11
+ nu_masses(  1)      :  0.355992E+03
+***************************************************************
+ phidot changing sign detected at z=   589.94381620777051      tau=   425.90227203716472     
+ phidot changing sign detected at z=   71.198965611918140      tau=   1569.3064165141861     
+***************************************************************
+Reion redshift       =   7.738
+Integrated opt depth =  0.0533
+ Window scales: 2 peak: 0.5000, sigma: 0.3000, start:1.4000, end 0.0000
+ Window scales: 1 peak: 0.5000, sigma: 0.1000, start:0.8000, end 0.2000
+ source max_eta_k:    1365906.5868618146      kmax =    101.57453882357977     
+H0                   = 70.867113
+Om_b h^2             =  0.022537
+Om_c h^2             =  0.129871
+Om_nu h^2            =  0.000644
+Om_darkenergy        =  0.695174
+Om_K                 =  0.000000
+Om_m (inc Om_u)      =  0.304754
+100 theta (CosmoMC)  =  1.073882
+N_eff (total)        =  3.046000
+ 1 nu, g= 1.0153 m_nu*c^2/k_B/T_nu0=    355.99 (m_nu=  0.060 eV)
+1 Int W              =  0.999548
+2 Int W              =  0.951287
+Reion opt depth      =  0.0533
+ nwindow 1: 362
+ nwindow 2: 1806
+Age of universe/GYr  =  12.830
+zstar                =  1090.37
+r_s(zstar)/Mpc       =  141.50
+100*theta            =  1.074186
+DA(zstar)/Gpc        =  13.17240
+zdrag                =  1060.86
+r_s(zdrag)/Mpc       =  144.04
+k_D(zstar) Mpc       =  0.1441
+100*theta_D          =  0.165460
+z_EQ (if v_nu=1)     =  3641.89
+k_EQ Mpc (if v_nu=1) =  0.011041
+100*theta_EQ         =  0.792916
+100*theta_rs_EQ      =  0.439031
+tau_recomb/Mpc       =  275.05  tau_now/Mpc =  13447.3
+z =    0.50  tau =  11675.2  chi =   1772.1 tau_min =10069.9 tau_max =13447.3
+z =    0.50  tau =  11675.2  chi =   1772.1 tau_min = 8105.2 tau_max =13447.3
+ Limber switch 0: 110
+ Limber switch 1: 110
+ Limber switch 2: 110
+at z =  0.000 sigma8 (all matter) =  0.8836
+at z =  0.000 sigma8^2_vd/sigma8  =  0.4620

@@ -2,12 +2,19 @@
      ______________________   __  ______  
     / __/ __/_  __/ ___/ _ | /  |/  / _ ) 
    / _// _/  / / / /__/ __ |/ /|_/ / _  | 
-  /___/_/   /_/  \___/_/ |_/_/  /_/____/   V3.1 Sept20
+  /___/_/   /_/  \___/_/ |_/_/  /_/____/   V3.1 Jan26
   
 ***************************************************************
- 
- EFTCAMB feedback level  =  3
- 
+
+ EFTCAMB settings:
+  EFTCAMB_feedback_level      =           3
+  EFTCAMB_back_turn_on        =   1.0000000000000000E-008
+  EFTCAMB_pert_turn_on        =   1.0000000000000000E-002
+  EFTCAMB_GR_threshold        =   1.0000000000000000E-008
+  EFTCAMB_stability_time      =   1.0000000000000000E-010
+  EFTCAMB_stability_threshold =   0.0000000000000000     
+  EFTCAMB_effective_w0wa      = F
+
  EFTCAMB stability flags:
   Math ghost stability   =  T
   Math mass stability    =  F
@@ -16,18 +23,20 @@
   Mass stability         =  F
   Mass stability rate    =  0.10000E+02
   Additional priors      =  T
- 
+  Positivity bounds      =  F
+  Minkowski limit      =  F
+
  EFTCAMB model flags:
    EFTflag             =  4
    FullMappingEFTmodel =  1
- 
+
    Model               =  Horava
    Number of params    =  2
    Horava with solar system constraints
- 
+
    Horava_eta          =    0.100000
    Horava_lambda       =    0.100000
- 
+
 ***************************************************************
  EFTCAMB Return to GR time:        0.1000E-01
  EFTCAMB Return to GR threshold:   0.1000E-07
@@ -44,7 +53,7 @@
    EFTGamma1P   =    0.5911E+07
    EFTGamma3V   =    0.5000E-01
    EFTGamma4V   =    0.5000E-01
-   EFTGamma6V   =    0.0000E+00
+   EFTGamma6V   =    0.1250E-01
 ***************************************************************
  EFTCAMB: checking stability of the theory
 
@@ -59,23 +68,23 @@ Om_nu h^2            =  0.010000
 Om_darkenergy        =  0.704824
 Om_K                 =  0.000000
 Om_m (inc Om_u)      =  0.295102
-100 theta (CosmoMC)  =  1.074060
+100 theta (CosmoMC)  =  1.074041
 N_eff (total)        =  3.046000
- 1 nu, g= 1.0153 m_nu*c^2/k_B/T_nu0=   5526.76 (m_nu=  0.930 eV)
+ 1 nu, g= 1.0153 m_nu*c^2/k_B/T_nu0=   5526.37 (m_nu=  0.930 eV)
 Reion opt depth      =  0.0900
 Age of universe/GYr  =  14.056
 zstar                =  1087.18
 r_s(zstar)/Mpc       =  156.03
-100*theta            =  1.075940
+100*theta            =  1.075926
 DA(zstar)/Gpc        =  14.50216
-zdrag                =  1058.46
+zdrag                =  1058.45
 r_s(zdrag)/Mpc       =  158.78
 k_D(zstar) Mpc       =  0.1334
-100*theta_D          =  0.162385
-z_EQ (if v_nu=1)     =  3216.47
-k_EQ Mpc (if v_nu=1) =  0.009207
-100*theta_EQ         =  0.880543
-100*theta_rs_EQ      =  0.485219
+100*theta_D          =  0.162386
+z_EQ (if v_nu=1)     =  3216.25
+k_EQ Mpc (if v_nu=1) =  0.009206
+100*theta_EQ         =  0.880574
+100*theta_rs_EQ      =  0.485236
 tau_recomb/Mpc       =  303.63  tau_now/Mpc =  14805.5
 ***************************************************************
  EFTCAMB Return to GR time:        0.1000E-01
@@ -93,7 +102,7 @@ tau_recomb/Mpc       =  303.63  tau_now/Mpc =  14805.5
    EFTGamma1P   =    0.5911E+07
    EFTGamma3V   =    0.5000E-01
    EFTGamma4V   =    0.5000E-01
-   EFTGamma6V   =    0.0000E+00
+   EFTGamma6V   =    0.1250E-01
 ***************************************************************
  EFTCAMB: checking stability of the theory
 
@@ -101,9 +110,9 @@ tau_recomb/Mpc       =  303.63  tau_now/Mpc =  14805.5
 ***************************************************************
 Reion redshift       =  10.456
 Integrated opt depth =  0.0900
- Window scales: 1 peak: 0.5000, sigma: 0.1000, start:0.8000, end 0.2000
  Window scales: 2 peak: 0.5000, sigma: 0.3000, start:1.4000, end 0.0000
- source max_eta_k:    485609.958039272      kmax =    32.7992223046380     
+ Window scales: 1 peak: 0.5000, sigma: 0.1000, start:0.8000, end 0.2000
+ source max_eta_k:    485609.65632672142      kmax =    32.799222882634751     
 H0                   = 70.000000
 Om_b h^2             =  0.022600
 Om_c h^2             =  0.112000
@@ -111,9 +120,9 @@ Om_nu h^2            =  0.010000
 Om_darkenergy        =  0.704824
 Om_K                 =  0.000000
 Om_m (inc Om_u)      =  0.295102
-100 theta (CosmoMC)  =  1.074060
+100 theta (CosmoMC)  =  1.074041
 N_eff (total)        =  3.046000
- 1 nu, g= 1.0153 m_nu*c^2/k_B/T_nu0=   5526.76 (m_nu=  0.930 eV)
+ 1 nu, g= 1.0153 m_nu*c^2/k_B/T_nu0=   5526.37 (m_nu=  0.930 eV)
 1 Int W              =  0.999546
 2 Int W              =  0.951256
 Reion opt depth      =  0.0900
@@ -122,21 +131,21 @@ Reion opt depth      =  0.0900
 Age of universe/GYr  =  14.056
 zstar                =  1087.18
 r_s(zstar)/Mpc       =  156.03
-100*theta            =  1.075940
+100*theta            =  1.075926
 DA(zstar)/Gpc        =  14.50216
-zdrag                =  1058.46
+zdrag                =  1058.45
 r_s(zdrag)/Mpc       =  158.78
 k_D(zstar) Mpc       =  0.1334
-100*theta_D          =  0.162384
-z_EQ (if v_nu=1)     =  3216.47
-k_EQ Mpc (if v_nu=1) =  0.009207
-100*theta_EQ         =  0.880543
-100*theta_rs_EQ      =  0.485219
+100*theta_D          =  0.162386
+z_EQ (if v_nu=1)     =  3216.25
+k_EQ Mpc (if v_nu=1) =  0.009206
+100*theta_EQ         =  0.880574
+100*theta_rs_EQ      =  0.485236
 tau_recomb/Mpc       =  303.47  tau_now/Mpc =  14805.5
-z =    0.50  tau =  12884.8  chi =   1920.8 tau_min =11112.9 tau_max =14805.5
-z =    0.50  tau =  12884.8  chi =   1920.8 tau_min = 8942.8 tau_max =14805.5
+z =    0.50  tau =  12884.7  chi =   1920.8 tau_min =11112.9 tau_max =14805.5
+z =    0.50  tau =  12884.7  chi =   1920.8 tau_min = 8942.8 tau_max =14805.5
  Limber switch 0: 110
  Limber switch 1: 110
  Limber switch 2: 110
-at z =  0.000 sigma8 (all matter) =  0.7028
+at z =  0.000 sigma8 (all matter) =  0.7027
 at z =  0.000 sigma8^2_vd/sigma8  =  0.3610
